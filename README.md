@@ -305,3 +305,16 @@ Browser extension for debugging Vue applications.
 **[Nuxt.js](https://nuxtjs.org)**
 
 Library for server side rendering, code-splitting, hot-reloading, static generation and more.
+
+# Contribution
+
+- Report issues
+- Open pull request with improvements
+- Spread the word
+- Reach out to me directly at <mauriurraco@gmail.com>
+
+# Donate
+
+`btc: 36V7HqqENSKn6iFCBuE4iCdtB29uGoCKzN`
+
+`eth: 0xB419E3E9fa2233383E0877d442e55C34B9C944dD`
