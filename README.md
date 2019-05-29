@@ -159,7 +159,7 @@ Mouse modifiers:
 
 ```vue
 <template>
-	<span>{{ message }}</span>
+  <span>{{ message }}</span>
 </template>
 
 <script>
