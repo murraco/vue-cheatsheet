@@ -306,6 +306,119 @@ Browser extension for debugging Vue applications.
 
 Library for server side rendering, code-splitting, hot-reloading, static generation and more.
 
+# Tips
+
+## #1 - Nested objects are NOT reactive (by default)
+
+```vue
+<script>
+  export default {
+    data () {
+      return {
+        someVar: ''
+      }
+    },
+    mounted () {
+      this.someVar: {
+        level1: {
+          level2: {
+            level3: 'something old'
+          }
+        }
+      }
+    },
+    methods : {
+      changeSomeVar () {
+        this.someVar.level1.level2.level3 = 'something new'
+      }
+    }
+  }
+</script>
+```
+
+That method looks like it should work, say you have an input that matches `someVar.level1.level2.level3`, if you ran this method it would not update the model. Instead you need to use `Vue.set` or in a SPC (Single Page Component) you'd just use `this.$set`:
+
+```vue
+<script>
+  export default {
+    // ...
+    methods : {
+      changeSomeVar () {
+        this.$set(this.someVar.level1.level2, 'level3', 'new value here')
+      }
+    }
+  }
+</script>
+```
+
+## #2 - Learn and use Vuex from the start
+
+This could start a flame war, some Vue fan will tell you to start with an event bus and work your way up, but Vuex is modular enough that you can use it on small and large apps alike. If you're building a SPA there's no chance you'll have fun without Vuex, you're going to implement a lot of the same functionality in your event bus, and making any other developer who works on the project's life a living hell.
+
+A good primer on vuex can be found here: [WTF is Vuex? A Beginner’s Guide To Vue’s Application Data Store](https://vuejsdevelopers.com/2017/05/15/vue-js-what-is-vuex/)
+
+## #3 - When in doubt, re-render
+
+Here's a simple use case, say you have an order form that pops up. If for some reason the user closes the order form and reopens it you might find some of the fields won't allow edits, or they have stale data, or if you're triggering the popup via a select box it might not work right. Honestly it's a major headache.
+
+One trick is to re-render your components. The easiest method I've found to do that is whenever a modal or some other component is registered on the DOM pass it a key, or on moun make it generate a random one. A good key could just be to use `moment.js` to generate a UTC timestamps and use that.
+
+The key tells Vue that this is a NEW instance, forget about the old one, and let's start over.
+
+## #4 - Learn the difference between props and data
+
+Essentially a prop is data that you pass INTO the component from a parent component or on initializing the root component for the first time.
+
+Data is the reactive properties defined on the instance. I find it to be a good practice if you ever think you'll need to update the value or use it re-actively to create a new value on mount that is a duplicate of the prop. So say you have a prop called `colorProp`, you might have vlaue in data called just `color`, then in your `mounted()` method have `this.color` set to `colorProp`.
+
+## #5 - Have a plan for loading elements
+
+You may start out just letting users wait without knowing what's going on but this is going to get dirty fast. Especially when you bring Vuex and multiple data points into the mix. It's best to have a single global **loader** setup that triggers whenever the global **loading** property from Vuex is updated. This way you can always toggle it properly and make sure to un-toggle it.
+
+One caveat is though - be sure you catch all errors - especially when using axios and promises and be sure to end the loading message on errors so users can go back, fix things and resubmit the form.
+
+## #6 - Make common filters global
+
+The example below is a bad example on how you should be using filters:
+
+```vue
+<template>
+  <div>
+    <!-- Bad idea -->
+    <input type="text" ..> ${{ moneyVar | money }}
+  </div>
+</template>
+
+<script>
+  export default {
+    data() { 
+      moneyVar: 3.50
+    },
+    filters: {
+      money: function (value) {
+        if (!value) {
+          return '0.00'
+        }
+        return '$' + parseFloat(value).toFixed(2)
+      }
+    }
+  }
+</script>
+```
+
+We should make it a global filter:
+
+```vue
+<script>
+  Vue.filter('money', function (value) {
+    if (!value) {
+      return '0.00'
+    }
+    return '$' + parseFloat(value).toFixed(2)
+  })
+</script>
+```
+
 # Contribution
 
 - Report issues
