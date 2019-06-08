@@ -1,6 +1,6 @@
 # Vue Cheatsheet
 
-This is a modified version of the official VueMastery cheatsheet 
+This is a simplified cheatsheet along with some tips for people who often works with Vue.js.
 
 ***
 
