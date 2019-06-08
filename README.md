@@ -1,5 +1,13 @@
 # Vue Cheatsheet
 
+This is a modified version of the official VueMastery cheatsheet 
+
+***
+
+<h3 align="center">Help this repo with a :star: if it's useful for you! :blush:</h3>
+
+***
+
 ## Expressions
 
 ```vue
