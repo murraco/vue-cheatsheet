@@ -145,7 +145,7 @@ Passing arguments to a computed binding:
       product_type() {
         const vm = this // 'this' instance unavailable within anonymous function
 
-        return function(product_id) {
+        return function(product_id) { // Argument is taken in anonymous function, NOT in computed function declaration.
           return vm.products[product_id]  // Square bracket notation for 'any' type variable
         }
       }
