@@ -392,7 +392,7 @@ A good primer on vuex can be found here: [WTF is Vuex? A Beginner’s Guide To V
 
 Here's a simple use case, say you have an order form that pops up. If for some reason the user closes the order form and reopens it you might find some of the fields won't allow edits, or they have stale data, or if you're triggering the popup via a select box it might not work right. Honestly it's a major headache.
 
-One trick is to re-render your components. The easiest method I've found to do that is whenever a modal or some other component is registered on the DOM pass it a key, or on moun make it generate a random one. A good key could just be to use `moment.js` to generate a UTC timestamps and use that.
+One trick is to re-render your components. The easiest method I've found to do that is whenever a modal or some other component is registered on the DOM pass it a key, or on mount make it generate a random one. A good key could just be to use `moment.js` to generate a UTC timestamps and use that.
 
 The key tells Vue that this is a NEW instance, forget about the old one, and let's start over.
 
@@ -400,7 +400,7 @@ The key tells Vue that this is a NEW instance, forget about the old one, and let
 
 Essentially a prop is data that you pass INTO the component from a parent component or on initializing the root component for the first time.
 
-Data is the reactive properties defined on the instance. I find it to be a good practice if you ever think you'll need to update the value or use it re-actively to create a new value on mount that is a duplicate of the prop. So say you have a prop called `colorProp`, you might have vlaue in data called just `color`, then in your `mounted()` method have `this.color` set to `colorProp`.
+Data is the reactive properties defined on the instance. I find it to be a good practice if you ever think you'll need to update the value or use it re-actively to create a new value on mount that is a duplicate of the prop. So say you have a prop called `colorProp`, you might have a value in data called just `color`, then in your `mounted()` method have `this.color` set to `colorProp`.
 
 ### 5: Have a plan for loading elements
 
