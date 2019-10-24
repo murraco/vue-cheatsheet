@@ -31,9 +31,6 @@ This is a simplified cheatsheet along with some tips for people who often works 
 * [Contribution](#contribution)
 * [Donate](#donate)
 
-
-***
-
 ## Expressions
 
 ```vue
