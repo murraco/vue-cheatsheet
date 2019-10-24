@@ -8,6 +8,29 @@ This is a simplified cheatsheet along with some tips for people who often works 
 
 ***
 
+## Table of Contents
+
+* [Expressions](#expressions)
+* [Directives](#directives)
+* [List Rendering](#list-rendering)
+* [Binding](#binding)
+* [Actions / Events](#actionsevents)
+* [Component Anatomy](#component-anatomy)
+* [Custom Events](#custom-events)
+* [Life Cycle Hooks](#life-cycle-hooks)
+* [Using a Single Slot](#using-a-single-slot)
+* [Multiple slots](#multiple-slots)
+* [Libraries You Should Know](#libraries-you-should-know)
+* [Tips](#tips)
+  * [Nested objects are NOT reactive (by default)](#1-nested-objects-are-not-reactive-by-default)
+  * [Learn and use Vuex from the start](#2-learn-and-use-vuex-from-the-start)
+  * [When in doubt, re-render](#3-when-in-doubt-re-render)
+  * [Learn the difference between props and data](#4-learn-the-difference-between-props-and-data)
+  * [Have a plan for loading elements](#5-have-a-plan-for-loading-elements)
+  * [Make common filters global](#6-make-common-filters-global)
+* [Contribution](#contribution)
+* [Donate](#donate)
+
 ## Expressions
 
 ```vue
