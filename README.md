@@ -86,7 +86,7 @@ To access the position in the array:
 To iterate through objects:
 
 ```html
-<li v-for="(value, key)" in object">...</li>
+<li v-for="value in object">...</li>
 ```
 
 Using v-for with a component:
@@ -426,7 +426,7 @@ A good primer on vuex can be found here: [WTF is Vuex? A Beginner’s Guide To V
 
 Here's a simple use case, say you have an order form that pops up. If for some reason the user closes the order form and reopens it you might find some of the fields won't allow edits, or they have stale data, or if you're triggering the popup via a select box it might not work right. Honestly it's a major headache.
 
-One trick is to re-render your components. The easiest method I've found to do that is whenever a modal or some other component is registered on the DOM pass it a key, or on mount make it generate a random one. A good key could just be to use `moment.js` to generate a UTC timestamps and use that.
+One trick is to re-render your components. The easiest method I've found to do that is whenever a modal or some other component is registered on the DOM pass it a key, or on mount make it generate a random one. A good key could just be to use `Date.now()` or `moment.js` to generate a UTC timestamps and use that.
 
 The key tells Vue that this is a NEW instance, forget about the old one, and let's start over.
 
