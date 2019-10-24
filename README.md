@@ -120,6 +120,40 @@ Style color set to value of activeColor:
 <div :style="{ color: activeColor }">...</div>
 ```
 
+Passing arguments to a computed binding:
+
+```vue
+<template>
+  <ProductComponent :cost="product_type('product_2')"></ProductComponent>
+</template>
+
+<script>
+  import ProductComponent from @/components/ProductComponent
+  
+  export default {
+    components: { ProductComponent },
+    data() {
+      return {
+        products: {
+          product_1: '100',
+          product_2: '200',
+          product_3: '300'
+        }
+      }
+    },
+    computed: {
+      product_type() {
+        const vm = this // 'this' instance unavailable within anonymous function
+
+        return function(product_id) { // Argument is taken in anonymous function, NOT in computed function declaration.
+          return vm.products[product_id]  // Square bracket notation for 'any' type variable
+        }
+      }
+    }
+  }
+</script>
+```
+
 ## Actions/Events
 
 Calls addToCart method on component:
