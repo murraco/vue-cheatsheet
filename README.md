@@ -87,6 +87,8 @@ To iterate through objects:
 
 ```html
 <li v-for="value in object">...</li>
+<li v-for="(value, index) in object">...</li>
+<li v-for="(value, name, index) in object">...</li>
 ```
 
 Using v-for with a component:
