@@ -4,7 +4,7 @@ This is a simplified cheatsheet along with some tips for people who often works 
 
 ***
 
-<h3 align="center">Please help this repo with a ⭐ if you find it useful! :blush:</h3>
+<h3 align="center">Please help this repo with a ⭐ or <a href='https://github.com/sponsors/murraco'>Sponsor Me</a> if you find it useful! :blush:</h3>
 
 ***
 
