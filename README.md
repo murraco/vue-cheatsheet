@@ -2,12 +2,6 @@
 
 This is a simplified cheatsheet along with some tips for people who often works with Vue.js.
 
-***
-
-<h3 align="center">Please help this repo with a ⭐ or <a href='https://github.com/sponsors/murraco'>Sponsor Me</a> if you find it useful! :blush:</h3>
-
-***
-
 ## Table of Contents
 
 * [Expressions](#expressions)
@@ -491,3 +485,7 @@ We should make it a global filter:
 - Open pull request with improvements
 - Spread the word
 - Reach out to me directly at <mauriurraco@gmail.com>
+
+# Buy me a coffee to show your support!
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/murraco)
