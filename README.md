@@ -1,20 +1,24 @@
 # Vue Cheatsheet
 
-This is a simplified cheatsheet along with some tips for people who often works with Vue.js.
+A simplified cheatsheet along with some tips for people who often work with Vue.js.
 
-## Table of Contents
+## Stack
+
+![](https://img.shields.io/badge/vue_2-✓-blue.svg)
+
+## Table of contents
 
 * [Expressions](#expressions)
 * [Directives](#directives)
-* [List Rendering](#list-rendering)
+* [List rendering](#list-rendering)
 * [Binding](#binding)
-* [Actions / Events](#actionsevents)
-* [Component Anatomy](#component-anatomy)
-* [Custom Events](#custom-events)
-* [Life Cycle Hooks](#life-cycle-hooks)
-* [Using a Single Slot](#using-a-single-slot)
+* [Actions/events](#actionsevents)
+* [Component anatomy](#component-anatomy)
+* [Custom events](#custom-events)
+* [Life cycle hooks](#life-cycle-hooks)
+* [Using a single slot](#using-a-single-slot)
 * [Multiple slots](#multiple-slots)
-* [Libraries You Should Know](#libraries-you-should-know)
+* [Libraries you should know](#libraries-you-should-know)
 * [Tips](#tips)
   * [Nested objects are NOT reactive (by default)](#1-nested-objects-are-not-reactive-by-default)
   * [Learn and use Vuex from the start](#2-learn-and-use-vuex-from-the-start)
@@ -23,7 +27,8 @@ This is a simplified cheatsheet along with some tips for people who often works 
   * [Have a plan for loading elements](#5-have-a-plan-for-loading-elements)
   * [Make common filters global](#6-make-common-filters-global)
 * [Contribution](#contribution)
-* [Donate](#donate)
+* [License](#license)
+* [Support](#support)
 
 ## Expressions
 
@@ -63,7 +68,7 @@ v.model.number="..." // Always returns a number
 v.model.trim="..." // Strips whitespace
 ```
 
-## List Rendering
+## List rendering
 
 ```html
 <li v-for="item in items" :key="item.id">
@@ -149,7 +154,7 @@ Passing arguments to a computed binding:
 </script>
 ```
 
-## Actions/Events
+## Actions/events
 
 Calls addToCart method on component:
 
@@ -215,7 +220,7 @@ Mouse modifiers:
 .middle
 ```
 
-## Component Anatomy
+## Component anatomy
 
 ```vue
 <template>
@@ -262,7 +267,7 @@ Mouse modifiers:
 </script>
 ```
 
-## Custom Events
+## Custom events
 
 Use props (above) to pass data into child components, custom events to pass data to parent elements.
 
@@ -286,7 +291,7 @@ Inside button-counter template:
 this.$emit('incrementyBy', 5)
 ```
 
-## Life Cycle Hooks
+## Life cycle hooks
 
 ```
 beforeCreate
@@ -366,7 +371,7 @@ Browser extension for debugging Vue applications.
 
 Library for server side rendering, code-splitting, hot-reloading, static generation and more.
 
-# Tips
+## Tips
 
 ### 1. Nested objects are NOT reactive (by default)
 
@@ -479,13 +484,19 @@ We should make it a global filter:
 </script>
 ```
 
-# Contribution
+## Contribution
 
 - Report issues
 - Open pull request with improvements
 - Spread the word
 - Reach out to me directly at <mauriurraco@gmail.com>
 
-# Buy me a coffee to show your support!
+## License
+
+Released under the [MIT License](LICENSE).
+
+## Support
+
+If this project helped you, consider buying me a coffee ☕️
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/murraco)
