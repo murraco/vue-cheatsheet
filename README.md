@@ -1,3 +1,5 @@
+> **Archived.** Unmaintained, kept for reference.
+
 # Vue Cheatsheet
 
 A simplified cheatsheet along with some tips for people who often work with Vue.js.
